@@ -1,0 +1,41 @@
+case,expected,actual,result
+Airport weekday off peak,6000,6000,PASS
+Airport weekday peak,7200,7200,PASS
+Airport weekend peak replaced,5400,5400,PASS
+Airport weekend off peak,5400,5400,PASS
+Outer weekend peak replaced,2700,2700,PASS
+Inner weekend,900,900,PASS
+Airport weekend student,4860,4860,PASS
+Airport weekend senior,4320,4320,PASS
+Airport weekday peak student,6480,6480,PASS
+Airport 07:59,6000,6000,PASS
+Airport 10:00,6000,6000,PASS
+Airport 17:00,7200,7200,PASS
+Airport 20:00,6000,6000,PASS
+Farthest across reversed route,3000,3000,PASS
+two covered zones free,0,0,PASS
+one covered zone free,0,0,PASS
+third zone charges normally,3600,3600,PASS
+expired month fallback,2400,2400,PASS
+before valid month fallback,1200,1200,PASS
+different year fallback,1200,1200,PASS
+uncovered intermediate zone,7200,7200,PASS
+year rollover expires,3000,3000,PASS
+same pass zones,1,1,PASS
+unknown pass zone,1,1,PASS
+invalid pass month,1,1,PASS
+invalid journey month,1,1,PASS
+invalid journey year,1,1,PASS
+empty route,1,1,PASS
+invalid zone even with pass,1,1,PASS
+invalid time even with pass,1,1,PASS
+invalid category even with pass,1,1,PASS
+Airport leaves exact reserve,1,1,PASS
+Airport final reserve,5000,5000,PASS
+covered pass works at reserve,1,1,PASS
+pass does not bypass reserve,0,0,PASS
+10000 pass journeys accepted,10000,10000,PASS
+unlimited pass balance unchanged,5000,5000,PASS
+revised exhaustive quotes,34560,34560,PASS
+revised exhaustive mismatches,0,0,PASS
+Summary: 39 passed; 0 failed
