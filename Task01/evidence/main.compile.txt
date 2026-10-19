@@ -1,0 +1,3 @@
+$ g++ -std=c++17 -Wall -Wextra -Wpedantic -Iinclude Task01/main.cpp -o build/Task01_main
+
+exit_code=0

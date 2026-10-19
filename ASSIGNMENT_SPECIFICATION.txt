@@ -1,0 +1,423 @@
+CO1: Apply object-oriented programming principles and C++ constructs such as data types, operators
+and control structures to design and write structured OOP-based programs – the object-oriented
+paradigm and its basic principles, tokens, keywords, identifiers, constants, data types, type
+compatibility, variables, operators, implicit conversions, operator precedence and control structures.
+
+Assignment Title: Design, Implement and Validate the Fare Logic of a City Metro Smart-Card System
+(Total Marks - 50)
+Nature of Assignment: Individual
+Duration: 1 Week
+Submission Date: __________________
+Bloom’s Levels Assessed: K5 – Evaluate (every task in this assignment is at K5 level)
+Mandatory Execution and GitHub Submission
+• Every student must individually execute every task in this assignment, including all
+“Complete the Code” programs.
+• Create a GitHub repository named DSA01-<RegisterNumber>-Assignment1 and share it with
+the course faculty (public, or private with the faculty added as a collaborator).
+• Keep one folder for each task (for example: Task01, Task02 ... or Q1, Q2 ...), containing the
+C++ source files, input files and output screenshots.
+• Include a README.md with your name, register number, compiler and version (for example
+g++ 13), the exact g++ command used to compile (for example g++ -std=c++17 -Wall -Wextra), the
+steps to run each program, and a short note of the result of each task.
+• Commit your work progressively – at least one commit for each task. The commit history will
+be checked; a single upload of all files on the last day will not be accepted.
+• Submit the GitHub link below and on the cover page of your report. An assignment
+submitted without a working GitHub link will not be evaluated.
+
+GitHub Repository Link: __________________________________________________
+How to Answer the Additional Questions
+Complete the Code: Copy the given code into your repository, replace every TODO with working code
+without changing the rest of the program, execute it and compare your output with the expected
+output.
+Predict the Output: Write the exact output of the given program before running it. Then run it and
+explain every difference between your prediction and the actual output, using the C++ rules
+involved. Predictions written after running the program will not be credited.
+Alternative Concept and Complexity Analysis: Describe how the solution would change if the
+alternative concept were used, with code or pseudocode, and analyse and compare the time
+
+complexity and space complexity of both solutions using Big-O notation, supported by your own
+measurements wherever possible.
+
+Scenario — Namma Metro Smart-Card Fare System
+A city metro rail divides its network into three zones – Inner, Middle and Outer. The fare is Rs 10, Rs
+20 or Rs 30 according to the farthest zone travelled, with a 20% surcharge during peak hours (8–10
+AM and 5–8 PM). Passengers use a stored-value smart card, and a journey is allowed only if at least
+Rs 50 remains on the card after the fare is deducted. Students and senior citizens receive a
+concession.
+The first version of the gate software was written in a hurry. Some fares are off by a paisa, the peak
+check accepts 10 AM as peak and 8 PM as off-peak inconsistently, a negative balance once appeared
+on a card, and the fare values are typed in several places.
+The number of journeys processed may grow:
+1 station (20,000 journeys a day) → 1 line (500,000 a day) → whole network (3,000,000 a day)
+You are required to analyse the problem, identify its objects, choose suitable C++ data types,
+constants, operators and control structures, implement the fare logic and validate it, so that every
+fare and balance is exact.
+Design Challenge:
+The metro is adding a fourth zone, a weekend discount and monthly passes.
+Re-evaluate your original design and determine whether it should be retained, modified or
+redesigned.
+
+TASK 1 – Understand the Problem and Identify the Objects 4 Marks
+Bloom’s Level: K5 – Evaluate
+Analyse the fare problem from the object-oriented point of view.
+Discuss:
+• The objects in the problem (card, passenger, journey, zone, fare table) and the data and
+behaviour of each
+• How the same problem would be written in a procedural style, and what changes in an
+object-oriented style
+• The basic principles of OOP – encapsulation, abstraction, inheritance and polymorphism –
+and where each could appear in this system
+• The rules every correct journey must satisfy (for example: balance never below Rs 50 after a
+journey)
+
+You are expected to justify each object and rule, not merely list names.
+Alternative Concept and Complexity Analysis
+If the fare system were written in a purely procedural style (global variables and free functions)
+instead of SmartCard, Journey and FareTable classes, what would the solution be? Analyse whether
+the time per journey or the memory per card changes (both are O(1)), and compare how much code
+must be changed when one fare rule changes.
+Evidence Expected
+A clear object-oriented analysis with objects, their data and behaviour, rules and stated assumptions.
+
+TASK 2 – Use Tokens, Keywords, Identifiers and Constants Correctly 3 Marks
+Bloom’s Level: K5 – Evaluate
+Define the fares, surcharge and limits so that a revision is made in one place only.
+Discuss:
+• The five kinds of tokens in your program (keywords, identifiers, constants, operators,
+punctuators) with examples
+• #define, const and constexpr constants, and why constexpr is preferred for the fare table
+• enum and enum class for zones, and why enum class is safer
+• Naming rules and conventions for identifiers
+
+Alternative Concept and Complexity Analysis
+If the fares were written with #define macros instead of constexpr constants and an enum class,
+what would change? Compare type checking and scope, and analyse the memory used (a macro
+occupies no storage; a constexpr value usually does not either) and whether the running time is
+affected.
+Evidence Expected
+A single, well-named set of constants with a justified choice between #define, const, constexpr and
+enum class.
+
+TASK 3 – Choose Data Types and Check Type Compatibility 4 Marks
+Bloom’s Level: K5 – Evaluate
+Select a C++ data type for every value in the system.
+Discuss:
+• The type chosen (bool, char, int, long long, unsigned, float, double, auto) for fares, balances,
+times, zone numbers and journey counts, with sizeof on your system
+
+• Why money should be stored in integer paise and not as double rupees
+• Type compatibility rules, and what the compiler does with int, double and bool values in the
+same expression
+• The ranges from <climits> and whether int is enough for a day’s collection across the
+network
+
+Alternative Concept and Complexity Analysis
+If money were stored as double rupees instead of long long paise, what would the solution be?
+Analyse the time per addition (O(1) in both), the space per value (8 bytes in both), and measure how
+the rounding error grows when n fares are added.
+Evidence Expected
+A justified data-type table with sizes and ranges, and evidence of one precision or overflow problem
+with its resolution.
+
+TASK 4 – Control Implicit Conversions 4 Marks
+Bloom’s Level: K5 – Evaluate
+Identify every place in the program where C++ converts a value from one type to another without
+being told.
+Discuss:
+• Integer division and integer-to-double conversion
+• Comparison of signed and unsigned values, and the compiler warning it produces
+• Narrowing conversions, and how brace initialisation (int x{3.7};) prevents them
+• static_cast and when an explicit cast is needed
+
+Predict the Output
+Write the exact output of the program below BEFORE running it. Then compile and run it, and
+explain every difference between your prediction and the actual output.
+#include <iostream>
+
+int main()
+{
+int a = 7, b = 2;
+double c = a / b;
+
+double d = static_cast<double>(a) / b;
+std::cout << c << ' ' << d << '\n';
+
+char ch = 'A' + 2;
+std::cout << ch << ' ' << ch + 1 << '\n';
+
+bool flag = 5;
+std::cout << flag << ' ' << std::boolalpha << flag << '\n';
+
+unsigned int u = 1;
+int s = -1;
+std::cout << (s < u ? "s < u" : "s >= u") << '\n';
+}
+
+My predicted output (write before running):
+
+Explain each line of the actual output, naming the conversion that took place (integer division, char
+to int promotion, int to bool, signed to unsigned).
+Alternative Concept and Complexity Analysis
+If every conversion in the program were written explicitly with static_cast (and brace initialisation
+were used everywhere), instead of relying on implicit conversions, what would the solution be?
+Analyse whether the running time or memory changes, and which errors are caught at compile time
+instead of at run time.
+Evidence Expected
+Identified conversion points with demonstrated surprises, and corrected code using brace
+initialisation or static_cast.
+
+TASK 5 – Write Correct Expressions with the Right Precedence 4 Marks
+Bloom’s Level: K5 – Evaluate
+
+Write the expressions for the peak check, the surcharge and the concession.
+Discuss:
+• Operator precedence and associativity in each expression, including the conditional operator
+?: and compound assignment
+• The difference between x++ and ++x, and why i = i++ is a mistake
+• The result of / and % with negative operands
+• Why (hour >= 8 && hour < 10) || (hour >= 17 && hour < 20) is correct and hour >= 8 &&
+hour < 10 || hour >= 17 && hour < 20 is equivalent but harder to read
+
+Predict the Output
+Write the exact output of the program below BEFORE running it. Then compile and run it, and
+explain every difference between your prediction and the actual output.
+#include <iostream>
+
+int main()
+{
+int x = 5, y = 3;
+std::cout << x + y * 2 << ' ' << (x + y) * 2 << '\n';
+
+int z = x++ + ++y;
+std::cout << z << ' ' << x << ' ' << y << '\n';
+
+std::cout << (x > y ? x : y) << ' ' << x % 4 * 2 << '\n';
+std::cout << 10 / 3 << ' ' << 10 % 3 << ' ' << -10 / 3 << ' ' << -10 % 3 << '\n';
+
+int k = 0;
+for (int i = 0; i < 10; i += 3) k += i;
+std::cout << k << '\n';
+}
+
+My predicted output (write before running):
+
+For every line, name the operators involved and the order in which precedence and associativity
+apply them.
+Alternative Concept and Complexity Analysis
+If the peak-hour check were done with a lookup table bool peak[24] indexed by the hour, instead of a
+combined && / || expression, what would the solution be? Analyse the time per check (O(1) in both,
+but fewer comparisons with the table) and the extra space of 24 bytes.
+Evidence Expected
+Correct, readable expressions with an operator-by-operator explanation.
+
+TASK 6 – Design the Control Structures 4 Marks
+Bloom’s Level: K5 – Evaluate
+Design the decision and looping logic for computing a fare and processing a day’s journeys.
+Discuss:
+• When to use if–else, a switch on the zone, and the conditional operator
+• How a for loop, a range-based for loop and a while loop could process the journeys, and
+which is best
+• Where break and continue are needed (for example, skipping an invalid journey)
+• What happens when no case of a switch matches
+
+Write pseudocode for the fare computation following the SIMATS Engineering – Standard for
+Algorithmic Pseudocode before writing C++ code.
+Complete the Code
+Complete TODO 1 and TODO 2 below using a switch statement and integer paise, and execute the
+program.
+#include <iomanip>
+#include <iostream>
+
+enum class Zone { Inner, Middle, Outer };
+
+constexpr int BASE_PAISE[] = {1000, 2000, 3000}; // Rs 10, Rs 20, Rs 30
+constexpr int PEAK_SURCHARGE_PERCENT = 20;
+constexpr long long MIN_BALANCE_PAISE = 5000; // Rs 50 must remain on the card
+
+long long fare(Zone z, bool peak)
+{
+// TODO 1: Use a switch on z to pick the base fare from BASE_PAISE, then add
+// PEAK_SURCHARGE_PERCENT % in peak hours using integer arithmetic only
+
+}
+
+bool canTravel(long long balance, long long f)
+{
+// TODO 2: Return true only if the balance left after paying the fare is at least
+// MIN_BALANCE_PAISE
+
+}
+
+int main()
+{
+long long balance = 10000; // Rs 100.00 in paise
+struct Trip { Zone zone; bool peak; };
+Trip trips[] = {{Zone::Inner, false}, {Zone::Outer, true}, {Zone::Middle, false}};
+for (const Trip& t : trips) {
+long long f = fare(t.zone, t.peak);
+if (canTravel(balance, f)) {
+balance -= f;
+std::cout << "Fare Rs " << f / 100 << '.' << std::setw(2)
+<< std::setfill('0') << f % 100 << std::setfill(' ');
+} else {
+std::cout << "Denied (low balance)";
+
+}
+std::cout << " balance Rs " << balance / 100 << '\n';
+}
+}
+
+Expected output:
+Fare Rs 10.00 balance Rs 90
+Fare Rs 36.00 balance Rs 54
+Denied (low balance) balance Rs 54
+
+Add a journey at exactly 10 AM and at exactly 8 PM and check that your peak rule treats them
+correctly.
+Alternative Concept and Complexity Analysis
+If the base fare were looked up from an array indexed by the zone (constexpr long long FARE[] =
+{1000, 2000, 3000}) instead of a switch, what would the solution be? Analyse the time per lookup
+(O(1) in both; the switch may become a jump table), the space of the array, and how each design
+copes with a fourth zone.
+Evidence Expected
+Pseudocode and C++ control structures for the fare computation, with justified choices.
+
+TASK 7 – From Procedural to Object-Oriented 4 Marks
+Bloom’s Level: K5 – Evaluate
+Rewrite the fare logic in two styles.
+Discuss:
+• A procedural version with separate variables and free functions
+• An object-oriented version with a SmartCard class that keeps its balance private and offers
+deduct() and canTravel()
+• How the class prevents a negative balance
+• Which version is easier to change when the minimum balance changes
+
+Alternative Concept and Complexity Analysis
+
+If the balance were kept in a public data member instead of a private member with deduct() and
+canTravel(), what would the solution be? Analyse whether time or space changes (they do not), and
+explain which rule of the system can then be broken by any part of the program.
+Evidence Expected
+Two working versions and a reasoned comparison of the procedural and object-oriented designs.
+
+TASK 8 – Read and Print Data Safely 4 Marks
+Bloom’s Level: K5 – Evaluate
+Design the input and output of the gate program.
+Discuss:
+• Reading values with cin and checking cin.fail() when the operator types letters instead of
+numbers
+• Clearing the error state with cin.clear() and discarding the bad input
+• Formatting money with <iomanip> (setw, setfill, fixed, setprecision)
+• Printing a neat journey report
+
+Alternative Concept and Complexity Analysis
+If each input line were read with std::getline() and converted with std::stoi() inside try/catch, instead
+of reading numbers directly with cin >>, what would the solution be? Analyse the time to process a
+line of length L (O(L) in both) and the buffer space needed, and compare how each recovers from
+invalid input.
+Evidence Expected
+Safe input handling with demonstrated recovery from invalid input, and correctly formatted output.
+
+TASK 9 – Implement and Test the Fare Logic 4 Marks
+Bloom’s Level: K5 – Evaluate
+Implement the complete fare logic and test it.
+Test:
+• Normal journeys in each zone, peak and off-peak
+• Boundary cases: exactly 8:00, 10:00, 17:00 and 20:00; a balance that leaves exactly Rs 50
+• Invalid cases: an unknown zone, a negative recharge, letters typed for the hour
+• A small set of 5 journeys whose total you calculate by hand
+
+Alternative Concept and Complexity Analysis
+If each journey were tested against a table of test cases (inputs and expected fares) in a loop, instead
+of separate hand-written checks, what would the solution be? Analyse the time for t tests (O(t)) and
+the space of the table, and how easily a new boundary case can be added.
+Evidence Expected
+Working source code and a test table with expected and actual results for every case.
+
+TASK 10 – Compare Expectations with Execution 4 Marks
+Bloom’s Level: K5 – Evaluate
+Compare what you expected with what actually happened.
+Discuss:
+• Whether the double and integer-paise totals for 20,000, 500,000 and 3,000,000 journeys
+agree, and by how much they differ
+• Whether int overflows for the network total
+• The compiler warnings you received with -Wall -Wextra and what each meant
+• Reasons for any difference
+
+Alternative Concept and Complexity Analysis
+If the network total were accumulated in an int, a long long or a double, what would happen at
+3,000,000 journeys? Analyse when each type fails (overflow versus loss of precision), and compare
+the time per addition and the space per variable.
+Evidence Expected
+A reasoned comparison of expected and observed behaviour, supported by measured totals.
+
+TASK 11 – Recommend and Defend the Final Design 4 Marks
+Bloom’s Level: K5 – Evaluate
+Recommend the final design for the metro.
+Discuss:
+• The types, constants and classes you recommend and why
+• How a fare revision will be carried out
+• The limitations of your design
+• Whether the design remains correct for the whole network
+
+Your recommendation must be based on evidence from your own experiments.
+Alternative Concept and Complexity Analysis
+If the fare table were read from a configuration file when the gate starts, instead of being compiled
+into the program, what would the solution be? Analyse the extra start-up time to read z fare values
+and the space they occupy, against the cost of recompiling and redeploying after every revision.
+Evidence Expected
+A technically justified recommendation supported by your tests and measurements.
+
+DAY-4 DESIGN CHALLENGE
+TASK 12 – Re-evaluate and Adapt the Design 8 Marks
+Bloom’s Level: K5 – Evaluate
+Changed Requirement
+The metro adds a fourth zone (Airport, Rs 60), a 10% weekend discount that does not combine with
+the peak surcharge, and a monthly pass that allows unlimited journeys in two chosen zones.
+Re-evaluate your original design. You may RETAIN → MODIFY → or REDESIGN your original solution.
+A. Impact Analysis – 2 Marks
+Identify which constants, enum values, expressions, switch statements and classes are affected.
+Evidence Expected
+A clear analysis of how the changed requirements affect the original design.
+B. Evaluation of the Original Design – 2 Marks
+Evaluate whether the switch-based fare logic and the SmartCard class can absorb the changes, using
+worked examples.
+Evidence Expected
+A technically supported evaluation of the original design.
+C. Adaptation or Redesign – 2 Marks
+Describe and implement the revised design (for example: a fare table indexed by zone, a separate
+discount rule, a Pass class).
+Evidence Expected
+An appropriate design response with working code.
+D. Evidence-Based Defence – 2 Marks
+Defend your decision using test results and the trade-offs involved.
+Evidence Expected
+A well-supported final decision integrating tests and the changed requirements.
+
+MARK DISTRIBUTION
+Task Bloom’s Level Marks
+Task 1 – Object-Oriented Analysis K5 – Evaluate 4
+Task 2 – Tokens and Constants K5 – Evaluate 3
+Task 3 – Data Types and Compatibility K5 – Evaluate 4
+Task 4 – Implicit Conversions K5 – Evaluate 4
+Task 5 – Operators and Precedence K5 – Evaluate 4
+Task 6 – Control Structures K5 – Evaluate 4
+Task 7 – Procedural vs Object-Oriented K5 – Evaluate 4
+Task 8 – Input and Output K5 – Evaluate 4
+Task 9 – Implementation & Testing K5 – Evaluate 4
+Task 10 – Expectation vs Execution K5 – Evaluate 4
+Task 11 – Final Recommendation K5 – Evaluate 4
+Subtotal 42
+Task 12 – Day-4 Design Challenge K5 – Evaluate 8
+TOTAL 50
+
+Submission Requirements
+• GitHub repository link (mandatory) containing the executed code for every task, including
+every completed “Complete the Code” program, with input files, output screenshots and a
+README.md.
+• Your assignment report containing the required evidence for Tasks 1–12, including UML
+diagrams, pseudocode, test tables and complexity analyses.
+
+Assessment Verification
+Students may be asked to explain, execute or modify any part of their code during a brief verification
+discussion/viva. The student should be able to explain and defend the work submitted as their own.

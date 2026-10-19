@@ -1,0 +1,17 @@
+{
+  "generated_utc": "2026-10-19T15:45:11.861204+00:00",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin27.0.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin\n",
+  "programs": [
+    {
+      "source": "Task01/main.cpp",
+      "sha256": "001e3ff8bbb96639be2a8b028d4a2e2aa7d42d1df90a33ead8d9993ba42ca446",
+      "compile": "g++ -std=c++17 -Wall -Wextra -Wpedantic -Iinclude Task01/main.cpp -o build/Task01_main",
+      "compile_exit": 0,
+      "run": "../build/Task01_main",
+      "stdin": "(none)",
+      "run_exit": 0,
+      "matches_expected": true
+    }
+  ]
+}
