@@ -4,7 +4,7 @@
 
 **Register number:** 192471006 (from repository name)
 
-**Student name:** not supplied; GitHub account `vinoththecool7-netizen`
+**Student name:** S Vinoth Kumar
 
 **Language:** C++17
 
@@ -16,7 +16,7 @@ transcripts. The report is [REPORT.md](REPORT.md); the original attached text is
 [ASSIGNMENT_SPECIFICATION.txt](ASSIGNMENT_SPECIFICATION.txt). See
 [VALIDATION.md](VALIDATION.md) for final checks and [EVIDENCE.md](EVIDENCE.md) for
 honest evidence limits. The student must review, personally execute and be able
-to explain the work. Student execution screenshots and a full name are still missing.
+to explain the work. Student execution screenshots are still missing.
 
 ## Build and run
 
@@ -119,5 +119,5 @@ student prediction evidence cannot be reconstructed afterward.
 
 Actual captured text is retained without invented screenshots. The full SIMATS
 pseudocode style guide was not attached, so exact institutional formatting remains
-unverified. Faculty sharing/submission, the student's full name and personal
+unverified. Faculty sharing/submission and personal
 execution/screenshots remain the student's follow-up items.

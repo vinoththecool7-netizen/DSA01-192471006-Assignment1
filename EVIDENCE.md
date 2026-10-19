@@ -19,6 +19,7 @@
 - One task-specific commit per task was published through the connected GitHub
   account. The history reflects real progression in this session, not invented
   work on different dates.
+- Student name confirmed by the user: **S Vinoth Kumar**, register number 192471006.
 
 ## Not supplied or not established
 
@@ -29,15 +30,13 @@
 2. **Individual student execution/prediction:** these are assistant-run programs.
    The student still needs to execute every task and defend it in the viva. The
    assistant cannot establish a personal pre-execution prediction retrospectively.
-3. **Student full name:** not supplied. The README/report use the GitHub account
-   and register number without inventing a personal name.
-4. **SIMATS pseudocode template:** the attachment names the standard but omits
+3. **SIMATS pseudocode template:** the attachment names the standard but omits
    its detailed style guide. Structured pseudocode is included; exact conformity
    to an unavailable institutional template is unverified.
-5. **Faculty sharing/submission:** the repository is public, but no faculty account,
+4. **Faculty sharing/submission:** the repository is public, but no faculty account,
    course portal or submission deadline was provided. No sharing or submission
    action on the student's behalf is claimed.
-6. **Unspecified business rules:** concession percentages, calendar-month pass
+5. **Unspecified business rules:** concession percentages, calendar-month pass
    interpretation, all-visited-zone coverage, zero-fare reserve and weekend plus
    concession combination are documented assumptions requiring faculty agreement.
 
@@ -51,6 +50,6 @@ individual direct run, use the compile command recorded in the task manifest.
 Include Task04's warning/rejected narrowing experiment and Task08's recovery
 fixture. Do not replace genuine captures with generated illustrations.
 
-Review each assumption, fill in the full name, confirm the institutional template,
+Review each assumption, confirm the institutional template,
 and commit any personal evidence with its true creation time before submitting
 the public repository link to the faculty.

@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 parts = [
     '# Assignment report: Namma Metro Smart-Card Fare System',
     '',
-    '**Student name:** not supplied; GitHub account `vinoththecool7-netizen`',
+    '**Student name:** S Vinoth Kumar',
     '**Register number:** 192471006',
     '**Repository:** https://github.com/vinoththecool7-netizen/DSA01-192471006-Assignment1',
     '**Execution environment:** Apple clang 21.0.0, C++17, arm64 macOS.',
@@ -18,7 +18,7 @@ parts = [
     'each `evidence/manifest.json`; the summary is in `VALIDATION.md`.',
     '',
     'Evidence limits: genuine text transcripts are included, but terminal screenshots,',
-    'student personal execution/prediction evidence, the student full name, and',
+    'student personal execution/prediction evidence, and',
     'confirmation against the unavailable SIMATS style guide remain incomplete.',
     'Concession/pass ambiguities are documented assumptions. All task commits reflect',
     'this actual work session; no week-long personal development history is claimed.',
