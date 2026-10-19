@@ -1,0 +1,27 @@
+{
+  "generated_utc": "2026-10-19T15:50:02.538935+00:00",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin27.0.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin\n",
+  "programs": [
+    {
+      "source": "Task07/oop.cpp",
+      "sha256": "be781d385836c96eae92f7264e2868e3a6a6779854c630c7b6304c5fd232168f",
+      "compile": "g++ -std=c++17 -Wall -Wextra -Wpedantic -Iinclude Task07/oop.cpp -o build/Task07_oop",
+      "compile_exit": 0,
+      "run": "../build/Task07_oop",
+      "stdin": "(none)",
+      "run_exit": 0,
+      "matches_expected": null
+    },
+    {
+      "source": "Task07/procedural.cpp",
+      "sha256": "06a649d41c046d2c9d8660dcb026065dca2ea1db0586b50c3f62a7a3f53c59bd",
+      "compile": "g++ -std=c++17 -Wall -Wextra -Wpedantic -Iinclude Task07/procedural.cpp -o build/Task07_procedural",
+      "compile_exit": 0,
+      "run": "../build/Task07_procedural",
+      "stdin": "(none)",
+      "run_exit": 0,
+      "matches_expected": true
+    }
+  ]
+}

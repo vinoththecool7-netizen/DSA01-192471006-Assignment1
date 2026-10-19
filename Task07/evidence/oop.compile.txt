@@ -1,0 +1,3 @@
+$ g++ -std=c++17 -Wall -Wextra -Wpedantic -Iinclude Task07/oop.cpp -o build/Task07_oop
+
+exit_code=0
