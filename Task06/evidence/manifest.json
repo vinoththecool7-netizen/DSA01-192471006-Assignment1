@@ -1,0 +1,27 @@
+{
+  "generated_utc": "2026-10-19T15:50:01.193148+00:00",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin27.0.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin\n",
+  "programs": [
+    {
+      "source": "Task06/boundaries.cpp",
+      "sha256": "abe3f3841cc7e2d83d8d6e919927eb3f308b2f4995cf49b9b978115a04d00dfb",
+      "compile": "g++ -std=c++17 -Wall -Wextra -Wpedantic -Iinclude Task06/boundaries.cpp -o build/Task06_boundaries",
+      "compile_exit": 0,
+      "run": "../build/Task06_boundaries",
+      "stdin": "(none)",
+      "run_exit": 0,
+      "matches_expected": true
+    },
+    {
+      "source": "Task06/main.cpp",
+      "sha256": "6baf039accc5feddf73e0de0af0918d247f96a47e2d47eb6d97a2d38d1824e84",
+      "compile": "g++ -std=c++17 -Wall -Wextra -Wpedantic -Iinclude Task06/main.cpp -o build/Task06_main",
+      "compile_exit": 0,
+      "run": "../build/Task06_main",
+      "stdin": "(none)",
+      "run_exit": 0,
+      "matches_expected": true
+    }
+  ]
+}

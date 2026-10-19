@@ -1,0 +1,37 @@
+Algorithm QUOTE_AND_PROCESS
+Input: journey list J, nonnegative card balance B in paise
+Output: accepted/denied journey report and updated B
+Constants: BASE = [1000, 2000, 3000], PEAK_PERCENT = 20, MIN_BALANCE = 5000
+BEGIN
+  FOR EACH journey T IN J DO
+    IF T.zone is unknown OR T.hour is outside 0..23 OR T.minute is outside 0..59 THEN
+      PRINT "Invalid journey"
+      CONTINUE
+    END IF
+    peak <- (8 <= T.hour AND T.hour < 10) OR (17 <= T.hour AND T.hour < 20)
+    SWITCH T.zone
+      CASE Inner:  base <- BASE[0]; BREAK
+      CASE Middle: base <- BASE[1]; BREAK
+      CASE Outer:  base <- BASE[2]; BREAK
+    END SWITCH
+    fare <- base
+    IF peak THEN
+      fare <- base + base * PEAK_PERCENT DIV 100
+    END IF
+    IF B >= MIN_BALANCE AND fare >= 0 AND fare <= B - MIN_BALANCE THEN
+      B <- B - fare
+      PRINT fare, B
+    ELSE
+      PRINT "Denied (low balance)", B
+    END IF
+  END FOR
+END
+
+The completed skeleton has no concessions because the supplied program has none.
+For the complete system, apply ROUND_HALF_UP(fare * (100-concession) / 100)
+before the balance check. All values remain integer paise.
+
+This uses named Algorithm/Input/Output/Constants, BEGIN/END, indented uppercase
+structured statements and <- assignment. The attachment refers to the SIMATS
+Engineering standard but does not include its full style guide. Exact conformity
+to a separate institutional template is unverified; adjust if faculty supplies it.

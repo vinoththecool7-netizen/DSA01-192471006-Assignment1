@@ -1,0 +1,3 @@
+$ g++ -std=c++17 -Wall -Wextra -Wpedantic -Iinclude Task06/boundaries.cpp -o build/Task06_boundaries
+
+exit_code=0
