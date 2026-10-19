@@ -1,0 +1,5 @@
+sizeof bytes: bool=1 char=1 int=4 long long=8 unsigned=4 float=4 double=8
+CHAR_BIT=8 INT_MIN=-2147483648 INT_MAX=2147483647 LLONG_MAX=9223372036854775807 UINT_MAX=4294967295
+auto count bytes=8 network paise=10800000000 fits int=false
+int + double + bool = 8.5
+10000 x Rs 0.10: double=1000.0000000001588 integer=100000 paise; error rupees=1.5882051229709759e-10
