@@ -1,0 +1,3 @@
+$ g++ -std=c++17 -Wall -Wextra -Wpedantic -Iinclude Task10/main.cpp -o build/Task10_main
+
+exit_code=0
