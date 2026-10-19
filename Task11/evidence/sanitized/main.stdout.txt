@@ -1,0 +1,9 @@
+configured Outer peak,3600,3600,PASS
+invalid configuration rejected,1,1,PASS
+invalid configuration rejected,1,1,PASS
+invalid configuration rejected,1,1,PASS
+invalid configuration rejected,1,1,PASS
+invalid configuration rejected,1,1,PASS
+invalid configuration rejected,1,1,PASS
+revised Outer peak,3960,3960,PASS
+Summary: 8 passed; 0 failed

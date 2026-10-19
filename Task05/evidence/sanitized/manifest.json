@@ -1,0 +1,32 @@
+{
+  "generated_utc": "2026-10-19T15:57:25.853617+00:00",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin27.0.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin\n",
+  "header_sha256": {
+    "include/metro.hpp": "f4375129188fc7fd4c4cf0df8e615695289818f0d273f35ae3c419941cd53759",
+    "include/safe_input.hpp": "fa7884ef4eceff9f8bdeaa2fb370de75ced3caed5cb6c491fc9916c43cb68ca3",
+    "include/test_support.hpp": "add673a9a62d6ce8e91919cd34dc26e66e78d0dcdc48d94700bdfd93f521b4c3"
+  },
+  "programs": [
+    {
+      "source": "Task05/expressions.cpp",
+      "sha256": "91d0ad1002f21372141bb8174eea81ee6ad0b2aa0245c573f787d94e72ef3af6",
+      "compile": "g++ -std=c++17 -Wall -Wextra -Wpedantic -g -fsanitize=address,undefined -fno-omit-frame-pointer -Iinclude Task05/expressions.cpp -o build/Task05_expressions_sanitized",
+      "compile_exit": 0,
+      "run": "../build/Task05_expressions_sanitized",
+      "stdin": "(none)",
+      "run_exit": 0,
+      "matches_expected": null
+    },
+    {
+      "source": "Task05/main.cpp",
+      "sha256": "31e46ee50a034f414ea8b2d03e574b898142539905cc1f39cfb65826d51213da",
+      "compile": "g++ -std=c++17 -Wall -Wextra -Wpedantic -g -fsanitize=address,undefined -fno-omit-frame-pointer -Iinclude Task05/main.cpp -o build/Task05_main_sanitized",
+      "compile_exit": 0,
+      "run": "../build/Task05_main_sanitized",
+      "stdin": "(none)",
+      "run_exit": 0,
+      "matches_expected": true
+    }
+  ]
+}

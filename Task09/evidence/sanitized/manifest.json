@@ -1,0 +1,32 @@
+{
+  "generated_utc": "2026-10-19T15:57:30.887072+00:00",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin27.0.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin\n",
+  "header_sha256": {
+    "include/metro.hpp": "f4375129188fc7fd4c4cf0df8e615695289818f0d273f35ae3c419941cd53759",
+    "include/safe_input.hpp": "fa7884ef4eceff9f8bdeaa2fb370de75ced3caed5cb6c491fc9916c43cb68ca3",
+    "include/test_support.hpp": "add673a9a62d6ce8e91919cd34dc26e66e78d0dcdc48d94700bdfd93f521b4c3"
+  },
+  "programs": [
+    {
+      "source": "Task09/input_tests.cpp",
+      "sha256": "3da0e9d87b68167f70a9460662bc18845c50a999c1f210eb5c87ba1e725ca4fc",
+      "compile": "g++ -std=c++17 -Wall -Wextra -Wpedantic -g -fsanitize=address,undefined -fno-omit-frame-pointer -Iinclude Task09/input_tests.cpp -o build/Task09_input_tests_sanitized",
+      "compile_exit": 0,
+      "run": "../build/Task09_input_tests_sanitized",
+      "stdin": "(none)",
+      "run_exit": 0,
+      "matches_expected": null
+    },
+    {
+      "source": "Task09/tests.cpp",
+      "sha256": "50cad30700a12243686f7aa948439640e3b39933406514bf03336f0c5eb3ebc1",
+      "compile": "g++ -std=c++17 -Wall -Wextra -Wpedantic -g -fsanitize=address,undefined -fno-omit-frame-pointer -Iinclude Task09/tests.cpp -o build/Task09_tests_sanitized",
+      "compile_exit": 0,
+      "run": "../build/Task09_tests_sanitized",
+      "stdin": "(none)",
+      "run_exit": 0,
+      "matches_expected": null
+    }
+  ]
+}

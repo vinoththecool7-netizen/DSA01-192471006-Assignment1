@@ -1,0 +1,3 @@
+Outer peak: Rs 36.00
+Accepted: true; balance Rs 64.00
+Rejected fare leaves balance unchanged.

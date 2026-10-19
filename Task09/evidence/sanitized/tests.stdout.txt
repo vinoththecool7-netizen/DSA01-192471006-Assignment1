@@ -1,0 +1,58 @@
+case,expected,actual,result
+Inner off peak,1000,1000,PASS
+Middle off peak,2000,2000,PASS
+Outer off peak,3000,3000,PASS
+Inner peak,1200,1200,PASS
+Middle peak,2400,2400,PASS
+Outer peak,3600,3600,PASS
+07:59,3000,3000,PASS
+08:00,3600,3600,PASS
+09:59,3600,3600,PASS
+10:00,3000,3000,PASS
+16:59,3000,3000,PASS
+17:00,3600,3600,PASS
+19:59,3600,3600,PASS
+20:00,3000,3000,PASS
+00:00,1000,1000,PASS
+23:59,1000,1000,PASS
+Student peak,3240,3240,PASS
+Senior off peak,1600,1600,PASS
+unknown zone,1,1,PASS
+negative zone,1,1,PASS
+hour -1,1,1,PASS
+hour 24,1,1,PASS
+minute -1,1,1,PASS
+minute 60,1,1,PASS
+unknown passenger,1,1,PASS
+negative initial balance,1,1,PASS
+exact reserve accepted,1,1,PASS
+exact reserve balance,5000,5000,PASS
+one paisa short denied,0,0,PASS
+denial unchanged,5999,5999,PASS
+negative fare denied,0,0,PASS
+extreme fare denied,0,0,PASS
+LLONG_MIN fare denied,0,0,PASS
+negative recharge denied,0,0,PASS
+zero recharge denied,0,0,PASS
+bad recharge unchanged,5000,5000,PASS
+positive recharge,1,1,PASS
+positive recharge balance,5250,5250,PASS
+recharge overflow denied,0,0,PASS
+overflow unchanged,9223372036854775807,9223372036854775807,PASS
+zero fare below reserve denied,0,0,PASS
+zero fare at reserve accepted,1,1,PASS
+half paisa rounds upward,1,1,PASS
+below half paisa rounds down,0,0,PASS
+max amount identity percent,9223372036854775807,9223372036854775807,PASS
+money five paise,1,1,PASS
+money whole rupees,1,1,PASS
+exhaustive cases checked,12960,12960,PASS
+exhaustive fare mismatches,0,0,PASS
+hand batch accepted,1,1,PASS
+hand batch accepted,1,1,PASS
+hand batch accepted,1,1,PASS
+hand batch accepted,1,1,PASS
+hand batch accepted,1,1,PASS
+hand five total paise,10180,10180,PASS
+hand five final balance,9820,9820,PASS
+Summary: 56 passed; 0 failed

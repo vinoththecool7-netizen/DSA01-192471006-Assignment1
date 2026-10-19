@@ -9,7 +9,9 @@ int main() {
         std::istringstream input{std::string{bad} + "10\n"};
         std::ostringstream output;
         long long result{-9};
-        test.equal(std::string{"recovery from "} + bad, metro::readInteger(input, output, "Hour:", 0, 23, result), true);
+        std::string label{bad};
+        label.pop_back(); // Keep the expected/actual table on one line per case.
+        test.equal(std::string{"recovery from "} + label, metro::readInteger(input, output, "Hour:", 0, 23, result), true);
         test.equal("recovered hour", result, 10);
     }
     std::istringstream empty;

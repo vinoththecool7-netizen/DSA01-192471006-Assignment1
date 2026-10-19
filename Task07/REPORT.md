@@ -1,7 +1,7 @@
 # Task 7 — Procedural and object-oriented implementations
 
-`procedural.cpp` owns a separate balance variable and calls two free functions.
-`oop.cpp` performs the same four operations through a private SmartCard balance;
+`procedural.cpp` owns a separate balance variable and calls free quote/payment functions.
+`oop.cpp` quotes through FareTable and performs the same four payment operations through a private SmartCard balance;
 the output prefixes must agree. Both reject a negative fare and an unaffordable
 fare without mutating balance. The OOP run also measures the two representations.
 

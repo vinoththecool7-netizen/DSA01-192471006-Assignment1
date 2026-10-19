@@ -60,6 +60,8 @@ for task in tasks:
     manifest = {'generated_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
                 'platform': platform.platform(),
                 'compiler': subprocess.run([cxx, '--version'], capture_output=True, text=True).stdout,
+                'header_sha256': {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
+                                  for p in sorted((ROOT / 'include').glob('*.hpp')) + sorted(task.glob('*.hpp'))},
                 'programs': records}
     (evidence / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
 if failures:

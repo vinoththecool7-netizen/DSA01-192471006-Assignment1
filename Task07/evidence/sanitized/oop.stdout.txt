@@ -1,0 +1,5 @@
+Accepted Rs 90.00
+Accepted Rs 54.00
+Denied Rs 54.00
+Denied Rs 54.00
+sizeof SmartCard=8 sizeof procedural balance=8

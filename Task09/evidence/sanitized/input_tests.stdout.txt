@@ -1,0 +1,15 @@
+recovery from letters,1,1,PASS
+recovered hour,10,10,PASS
+recovery from 8abc,1,1,PASS
+recovered hour,10,10,PASS
+recovery from 24,1,1,PASS
+recovered hour,10,10,PASS
+recovery from -2,1,1,PASS
+recovered hour,10,10,PASS
+recovery from 9999999999999999999999999999999999,1,1,PASS
+recovered hour,10,10,PASS
+EOF returns false,0,0,PASS
+EOF leaves output untouched,123,123,PASS
+final line without newline,1,1,PASS
+final hour,20,20,PASS
+Summary: 14 passed; 0 failed

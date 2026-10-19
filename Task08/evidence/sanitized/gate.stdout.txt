@@ -1,0 +1,29 @@
+Card starts at Rs 100.00
+Recharge paise (0 skips):
+Out of range or extra text; try again.
+Recharge paise (0 skips):
+Hour (0..23; -1 quits):
+Invalid integer; try again.
+Hour (0..23; -1 quits):
+Out of range or extra text; try again.
+Hour (0..23; -1 quits):
+Out of range or extra text; try again.
+Hour (0..23; -1 quits):
+Minute (0..59):
+Zone (1 Inner; 2 Middle; 3 Outer):
+Out of range or extra text; try again.
+Zone (1 Inner; 2 Middle; 3 Outer):
+Passenger (0 Adult; 1 Student; 2 Senior):
+Trip 1 | Accepted | Fare Rs 10.00 | Balance Rs 90.00
+Hour (0..23; -1 quits):
+Minute (0..59):
+Zone (1 Inner; 2 Middle; 3 Outer):
+Passenger (0 Adult; 1 Student; 2 Senior):
+Trip 2 | Accepted | Fare Rs 30.00 | Balance Rs 60.00
+Hour (0..23; -1 quits):
+Minute (0..59):
+Zone (1 Inner; 2 Middle; 3 Outer):
+Passenger (0 Adult; 1 Student; 2 Senior):
+Trip 3 | Denied | Fare Rs 36.00 | Balance Rs 60.00
+Hour (0..23; -1 quits):
+Final balance Rs 60.00

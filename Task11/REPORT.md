@@ -22,7 +22,7 @@ not three copies of configuration inside one deployed engine.
 
 For network correctness, worst-case original daily revenue is
 3,000,000×3,600=10,800,000,000 paise, safely within long long. The changed
-Airport maximum gives 21,600,000,000,000? No: 3,000,000×7,200 is exactly
+Airport maximum gives 3,000,000×7,200 =
 21,600,000,000 paise (Rs 216,000,000), also safely within long long.
 The code does not accumulate an unbounded lifetime total without checks.
 Fare lookup/deduction are O(1), processing n journeys is O(n) with O(1) streaming
