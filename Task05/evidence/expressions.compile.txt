@@ -1,0 +1,3 @@
+$ g++ -std=c++17 -Wall -Wextra -Wpedantic -Iinclude Task05/expressions.cpp -o build/Task05_expressions
+
+exit_code=0
