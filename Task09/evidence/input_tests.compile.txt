@@ -1,0 +1,3 @@
+$ g++ -std=c++17 -Wall -Wextra -Wpedantic -Iinclude Task09/input_tests.cpp -o build/Task09_input_tests
+
+exit_code=0
