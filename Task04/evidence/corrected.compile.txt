@@ -1,0 +1,3 @@
+$ g++ -std=c++17 -Wall -Wextra -Wpedantic -Iinclude Task04/corrected.cpp -o build/Task04_corrected
+
+exit_code=0

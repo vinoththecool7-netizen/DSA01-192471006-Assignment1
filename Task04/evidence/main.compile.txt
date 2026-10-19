@@ -1,0 +1,7 @@
+$ g++ -std=c++17 -Wall -Wextra -Wpedantic -Iinclude Task04/main.cpp -o build/Task04_main
+Task04/main.cpp:19:17: warning: comparison of integers of different signs: 'int' and 'unsigned int' [-Wsign-compare]
+   19 | std::cout << (s < u ? "s < u" : "s >= u") << '\n';
+      |               ~ ^ ~
+1 warning generated.
+
+exit_code=0

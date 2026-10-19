@@ -1,0 +1,2 @@
+// Intentionally invalid: compile explicitly with -x c++ to observe rejection.
+int main() { int x{3.7}; return x; }

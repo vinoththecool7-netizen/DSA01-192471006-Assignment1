@@ -1,0 +1,14 @@
+$ g++ -std=c++17 -Wall -Wextra -Wpedantic -x c++ Task04/narrowing.cpp.txt -o build/narrowing
+Task04/narrowing.cpp.txt:2:20: error: type 'double' cannot be narrowed to 'int' in initializer list [-Wc++11-narrowing]
+    2 | int main() { int x{3.7}; return x; }
+      |                    ^~~
+Task04/narrowing.cpp.txt:2:20: note: insert an explicit cast to silence this issue
+    2 | int main() { int x{3.7}; return x; }
+      |                    ^~~
+      |                    static_cast<int>( )
+Task04/narrowing.cpp.txt:2:20: warning: implicit conversion from 'double' to 'int' changes value from 3.7 to 3 [-Wliteral-conversion]
+    2 | int main() { int x{3.7}; return x; }
+      |                   ~^~~
+1 warning and 1 error generated.
+
+exit_code=1
