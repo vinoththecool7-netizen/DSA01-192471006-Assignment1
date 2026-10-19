@@ -1,0 +1,8 @@
+Prediction recorded by the assistant before compiling or running Task04.
+Assumption: the execution character set is ASCII-compatible (as on this target).
+This is not a claim that the student personally made this prediction.
+
+3 3.5
+C 68
+1 true
+s >= u

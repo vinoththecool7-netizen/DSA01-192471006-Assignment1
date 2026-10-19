@@ -1,0 +1,8 @@
+Prediction recorded by the assistant before compiling or running Task05.
+This is not a claim of a personal student prediction.
+
+11 16
+9 6 4
+6 4
+3 1 -3 -1
+18
