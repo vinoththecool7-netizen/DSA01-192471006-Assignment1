@@ -1,0 +1,3 @@
+$ g++ -std=c++17 -Wall -Wextra -Wpedantic -Iinclude Task08/gate.cpp -o build/Task08_gate
+
+exit_code=0
